@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Navigation = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState('');
 
   useEffect(()=>{
     if(localStorage.getItem('token')) {
@@ -15,7 +15,6 @@ const Navigation = () => {
   },[])
 
   const handleLogout = e => {
-    // e.preventDefault();
     localStorage.removeItem('token')
     setLoggedIn(false);
   }
@@ -23,6 +22,9 @@ const Navigation = () => {
   return (
     <Navbar>
         <Nav>
+            <NavItem>
+              <Link to='/'>Home</Link>
+            </NavItem>
             <NavItem>
                 {!loggedIn ? <Link to="/login">Login</Link> : <Link to="/" onClick={handleLogout}>Logout</Link>}
             </NavItem>

@@ -12,6 +12,7 @@ const AddFriendForm = (props) => {
             .post('/friends', newFriend)
             .then(request => {
                 console.log('Added Friend ', request.data)
+                window.location.reload();
             })
             .catch(err => {
                 console.log('addFriend Error on addFriendForm.js: ', err);

@@ -61,6 +61,7 @@ class Login extends React.Component {
               />
 
               <Button
+                  onSubmit={this.handleLogin}
                   className="login-button"
               >
                   Login

@@ -13,7 +13,8 @@ class Friends extends React.Component {
 
   state = {
     friends: [''],
-    isLoading: true
+    isLoading: true,
+    isLoggedIn: false,
   };
 
   componentDidMount() {
@@ -34,7 +35,6 @@ class Friends extends React.Component {
       })
       .catch(err => console.log('getData Error: ', err))
   }
-
 
   render() {
     console.log('this.state from Friends.js: ', this.state);

@@ -18,6 +18,10 @@ $break-tablet: 768px;
     flex-basis: 250px;
     max-width: 50%;
 
+    .friend-card-button {
+      margin-right: 10px;
+    }
+
     @media screen and (max-width: $break-tablet) {
       max-width: 95%;
     }
