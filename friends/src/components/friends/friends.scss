@@ -1,3 +1,6 @@
+$break-mobile: 450px;
+$break-tablet: 768px;
+
 .friend-list {
   display: flex;
   flex-flow: row wrap;
@@ -14,5 +17,19 @@
     flex-grow: 1;
     flex-basis: 250px;
     max-width: 50%;
+
+    @media screen and (max-width: $break-tablet) {
+      max-width: 95%;
+    }
+  }
+}
+
+.add-friend {
+  margin: 30px 0;
+  padding-bottom: 40px;
+  border-bottom: 1px solid black;
+
+  .add-friend-input {
+    margin-bottom: 10px;
   }
 }

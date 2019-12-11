@@ -1,15 +1,19 @@
 import React from 'react'
-import { axiosWithAuth } from '../../axiosWithAuth';
+import Loader from 'react-loader-spinner';
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 import FriendCard from './FriendsCard';
+import AddFriendForm from './addFriendForm';
 
 import { Container } from 'reactstrap';
 import './friends.scss';
 
+
 class Friends extends React.Component {
 
   state = {
-    friends: ['']
+    friends: [''],
+    isLoading: true
   };
 
   componentDidMount() {
@@ -23,7 +27,8 @@ class Friends extends React.Component {
       .then(res => {
         console.log('getData: ', res);
         this.setState({
-          friends: res.data
+          friends: res.data,
+          isLoading: false
         });
         console.log('Component State After API Request: ', this.state)
       })
@@ -32,10 +37,19 @@ class Friends extends React.Component {
 
   render() {
     console.log('this.state from Friends.js: ', this.state);
-    console.log(this.state.friends[0])
+
     return(
       <Container>
+        <AddFriendForm />
         <h1 className="friend-list-header">Friend List</h1>
+        {this.state.isLoading &&
+            <div>
+                <h3>Loading...</h3>
+                <Loader type="Puff" color="#204963" height="60" width="60" />
+            </div>
+        }
+        
+        {!this.state.isLoading && 
         <div className="friend-list">
           {this.state.friends.map (friend => (
             <FriendCard
@@ -45,8 +59,8 @@ class Friends extends React.Component {
               email={friend.email}
             />
           ))}
-
-        </div>
+        </div>  
+        }
       </Container>
     );
   }

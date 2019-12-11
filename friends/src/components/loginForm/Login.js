@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import {NavItem, Button, Form, Input, Card, Container} from 'reactstrap';
+import { Button, Form, Input, Card } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './loginStyles.scss';
 

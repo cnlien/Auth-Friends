@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { Card, CardHeader, CardText, CardBody  } from 'reactstrap'
+import { Card, CardHeader, CardText, CardBody, Button  } from 'reactstrap'
 
 const FriendCard = (props) => {
   
