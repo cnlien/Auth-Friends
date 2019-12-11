@@ -23,7 +23,7 @@ class Friends extends React.Component {
 
   getData = () => {
     axiosWithAuth()
-      .get('/friends')
+      .get(`/friends`)
       .then(res => {
         console.log('getData: ', res);
         this.setState({
@@ -35,12 +35,14 @@ class Friends extends React.Component {
       .catch(err => console.log('getData Error: ', err))
   }
 
+
   render() {
     console.log('this.state from Friends.js: ', this.state);
 
     return(
       <Container>
         <AddFriendForm />
+
         <h1 className="friend-list-header">Friend List</h1>
         {this.state.isLoading &&
             <div>

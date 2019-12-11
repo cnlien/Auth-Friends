@@ -7,7 +7,7 @@ const AddFriendForm = (props) => {
     
     const [newFriend, setNewFriend] = useState({name:'', age:'', email:''});
 
-    const addFriend = e => {
+    const addFriend = () => {
         axiosWithAuth()
             .post('/friends', newFriend)
             .then(request => {
