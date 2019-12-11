@@ -1,20 +1,22 @@
 import React from 'react';
-
-import { Card, CardHeader, CardText, CardBody, Button  } from 'reactstrap';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
+import { Card, CardHeader, CardText, CardBody, Button  } from 'reactstrap';
+
 const FriendCard = (props) => {
+
+  console.log('props from FriendsCard.js: ',props)
 
   const handleDelete = (id) => {
     axiosWithAuth()
       .delete(`/friends/${id}`)
-      .then((res) => {
-        console.log('handleDelete: ', res);
-        window.location.reload();
+      .then(res => {
+        console.log('id from handleDelete: ',id)
+        console.log('handleDelete on FriendsCard.js: ', res);
+        // window.location.reload();
       })
       .catch(err => console.log('handleDeleteError: ', err))
   }
-  
 
    return(
     <Card className='friend-card'>

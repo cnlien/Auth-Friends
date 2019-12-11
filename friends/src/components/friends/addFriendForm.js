@@ -5,13 +5,13 @@ import { Form, Input, Button } from 'reactstrap';
 
 const AddFriendForm = (props) => {
     
-    const [newFriend, setNewFriend] = useState({name:'', age:'', email:''});
+    const [newFriend, setNewFriend] = useState({id: '', name:'', age:'', email:''});
 
     const addFriend = () => {
         axiosWithAuth()
             .post('/friends', newFriend)
-            .then(request => {
-                console.log('Added Friend ', request.data)
+            .then(res => {
+                console.log('Added Friend ', res.data)
                 window.location.reload();
             })
             .catch(err => {

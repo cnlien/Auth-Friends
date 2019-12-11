@@ -26,7 +26,7 @@ class Friends extends React.Component {
     axiosWithAuth()
       .get(`/friends`)
       .then(res => {
-        console.log('getData: ', res);
+        console.log('getData from Friends.js: ', res);
         this.setState({
           friends: res.data,
           isLoading: false
