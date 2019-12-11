@@ -6,19 +6,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Navigation = () => {
-    return (
-        <Navbar>
-            <Nav>
-                <NavItem>
-                    <Link to="/login">Login</Link>
-                </NavItem>
+  return (
+    <Navbar>
+        <Nav>
+            <NavItem>
+                <Link to="/login">Login</Link>
+            </NavItem>
 
-                <NavItem>
-                    <Link to="/protected">Friends(Protected Page)</Link>
-                </NavItem>
-            </Nav>
-        </Navbar>
-    )
+            <NavItem>
+                <Link to="/friends">Friends(Protected Page)</Link>
+            </NavItem>
+        </Nav>
+    </Navbar>
+  )
 }
 
 export default Navigation;
