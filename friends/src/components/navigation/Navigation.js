@@ -23,14 +23,11 @@ const Navigation = () => {
     <Navbar>
         <Nav>
             <NavItem>
-              <Link to='/'>Home</Link>
-            </NavItem>
-            <NavItem>
-                {!loggedIn ? <Link to="/login">Login</Link> : <Link to="/" onClick={handleLogout}>Logout</Link>}
+              {loggedIn ? <Link to='/friends'>Friends</Link> : <Link to="/">Friends</Link>}
             </NavItem>
 
             <NavItem>
-                <Link to="/friends">Friends</Link>
+                {!loggedIn ? <Link to="/login">Login</Link> : <Link to="/" onClick={handleLogout}>Logout</Link>}
             </NavItem>
         </Nav>
     </Navbar>

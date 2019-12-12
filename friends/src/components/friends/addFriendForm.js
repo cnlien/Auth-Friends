@@ -3,15 +3,16 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 import { Form, Input, Button } from 'reactstrap';
 
-const AddFriendForm = (props) => {
+const AddFriendForm = () => {
     
-    const [newFriend, setNewFriend] = useState({id: '', name:'', age:'', email:''});
+    const [newFriend, setNewFriend] = useState({name:'', age:'', email:''});
 
     const addFriend = () => {
         axiosWithAuth()
-            .post('/friends', newFriend)
+            .post(`friends`, newFriend)
             .then(res => {
                 console.log('Added Friend ', res.data)
+                res.data.push('friends')
                 window.location.reload();
             })
             .catch(err => {

@@ -20,7 +20,7 @@ const FriendCard = (props) => {
 
    return(
     <Card className='friend-card'>
-      <CardHeader>{props.name}, {props.age}</CardHeader>
+      <CardHeader>`${props.name}, Age: ${props.age}`</CardHeader>
       <CardBody>
         <CardText>Email: {props.email}</CardText>
         <Button className="friend-card-button">Edit</Button>

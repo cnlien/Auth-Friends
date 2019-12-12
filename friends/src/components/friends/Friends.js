@@ -2,10 +2,10 @@ import React from 'react'
 import Loader from 'react-loader-spinner';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
-import FriendCard from './FriendsCard';
+// import FriendCard from './FriendsCard';
 import AddFriendForm from './addFriendForm';
 
-import { Container } from 'reactstrap';
+import { Container, Card, CardHeader, CardText, CardBody, Button } from 'reactstrap';
 import './friends.scss';
 
 
@@ -24,7 +24,7 @@ class Friends extends React.Component {
 
   getData = () => {
     axiosWithAuth()
-      .get(`/friends`)
+      .get(`friends`)
       .then(res => {
         console.log('getData from Friends.js: ', res);
         this.setState({
@@ -36,8 +36,19 @@ class Friends extends React.Component {
       .catch(err => console.log('getData Error: ', err))
   }
 
+
+
   render() {
     console.log('this.state from Friends.js: ', this.state);
+
+    const handleDelete = (id) => {
+      axiosWithAuth()
+        .delete(`friends/${id}`)
+        .then(res=>{
+          console.log('handleDelete: ', res)
+          console.log(`DELETED FRIEND ${id} SUCCESSFULLY`)
+        })
+    }
 
     return(
       <Container>
@@ -54,12 +65,26 @@ class Friends extends React.Component {
         {!this.state.isLoading && 
         <div className="friend-list">
           {this.state.friends.map (friend => (
-            <FriendCard
-              key={friend.id}
-              name={friend.name}
-              age={friend.age}
-              email={friend.email}
-            />
+
+            <Card className='friend-card' key={friend.id}>
+              <CardHeader>{friend.name}, <em>{friend.age}</em></CardHeader>
+              <CardBody>
+                <CardText>Email: {friend.email}</CardText>
+                <Button className="friend-card-button">Edit</Button>
+                <Button
+                  onClick={()=>handleDelete(friend.id)}
+                >
+                  Delete
+                </Button>
+              </CardBody>
+            </Card>
+
+            // <FriendCard
+            //   key={friend.id}
+            //   name={friend.name}
+            //   age={friend.age}
+            //   email={friend.email}
+            // />
           ))}
         </div>  
         }
