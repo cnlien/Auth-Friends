@@ -47,6 +47,7 @@ class Friends extends React.Component {
         .then(res=>{
           console.log('handleDelete: ', res)
           console.log(`DELETED FRIEND ${id} SUCCESSFULLY`)
+          window.location.reload();
         })
     }
 
