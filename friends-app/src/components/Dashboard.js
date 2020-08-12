@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { fetchFriends } from '../actions'
 
 import FriendCard from './FriendCard'
+import AddFriendForm from './AddFriendForm'
 
 
 const Dashboard= (props) => {
@@ -23,6 +24,7 @@ const Dashboard= (props) => {
     } else {
         return(
             <div>
+                <AddFriendForm />
                 {props.friends.map( friend => {
                     return(
                         <FriendCard

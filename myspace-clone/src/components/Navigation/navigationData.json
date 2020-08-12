@@ -1,0 +1,72 @@
+"data": [
+    {
+        "label": "Home",
+        "link": "/"
+    },
+
+    {
+        "label": "Browse",
+        "link": "/"
+    },
+
+    {
+        "label": "Search",
+        "link": "/"
+    },
+
+    {
+        "label": "Invite",
+        "link": "/"
+    },
+
+    {
+        "label": "Film",
+        "link": "/"
+    },
+
+    {
+        "label": "Mail",
+        "link": "/"
+    },
+
+    {
+        "label": "Blog",
+        "link": "/"
+    },
+
+    {
+        "label": "Favorites",
+        "link": "/"
+    },
+
+    {
+        "label": "Forum",
+        "link": "/"
+    },
+
+    {
+        "label": "Groups",
+        "link": "/"
+    },
+
+    {
+        "label": "Events",
+        "link": "/"
+    },
+    {
+        "label": "Videos",
+        "link": "/"
+    },
+    {
+        "label": "Music",
+        "link": "/"
+    },
+    {
+        "label": "Comedy",
+        "link": "/"
+    },
+    {
+        "label": "Classifieds",
+        "link": "/"
+    },
+]
